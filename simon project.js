@@ -10,11 +10,9 @@ document.addEventListener('keypress', function(){
     if(started == false){
         console.log("game started");
         started = true;
-    }
-    
+    }   
     levelUp();
 })
-
 
 function levelUp() {
     userSeq= [];
@@ -38,16 +36,12 @@ function gameFlash(btn) {
     }, 250);
 }
 
-
-
 function userFlash(btn) {
     btn.classList.add('userFlash');
     setTimeout(function(){
         btn.classList.remove('userFlash')
     }, 250);
 }
-
-
 
 function checkAns(idx){
   
@@ -68,14 +62,12 @@ function checkAns(idx){
     }
 }
 
-
 function reset(){
     gameSeq = [];
     userSeq = [];
     level = 0;
     started = false;
 }
-
 
 function btnPress() {
     let btn = this;
@@ -84,34 +76,11 @@ function btnPress() {
     userSeq.push(userColor);
     console.log(userSeq);
     userFlash(btn);
-    
     checkAns(userSeq.length -1);
 }
-
 
 
 let allBtns = document.querySelectorAll('.button');
 for(btn of allBtns){
     btn.addEventListener('click', btnPress);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
